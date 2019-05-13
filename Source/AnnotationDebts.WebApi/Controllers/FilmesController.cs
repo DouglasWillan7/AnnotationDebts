@@ -33,7 +33,7 @@ namespace AnnotationDebts.WebApi.Controllers
         [ProducesResponseType(typeof(Filme), 200)]
         [ProducesResponseType(typeof(CoreException<CoreError>), 400)]
         [ProducesResponseType(typeof(InternalError), 500)]
-        public async Task<IActionResult> GetFilmesAsync([FromQuery] FilmesGet filmesGet)
+        public async Task<IActionResult> GetFilmeAsync([FromQuery] FilmesGet filmesGet)
         {
             Pesquisa pesquisa = Mapper.Map<FilmesGet, Pesquisa>(filmesGet);
             IEnumerable<Filme> filmes = await filmesService.ObterFilmesAsync(pesquisa);
